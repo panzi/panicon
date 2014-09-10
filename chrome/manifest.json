@@ -1,0 +1,11 @@
+{
+	"name": "Pan-Icon",
+	"description": "Adds a pan icon to every web page.",
+	"version": "1.0",
+	"manifest_version": 2,
+	"content_scripts": [{
+		"matches": ["http://*/*", "https://*/*"],
+		"js": ["panicon.js"],
+		"run_at": "document_end"
+	}]
+}
