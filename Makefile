@@ -7,9 +7,9 @@ CRXDIR=$(BUILDDIR)/chrome/panicon
 
 -include Makefile.user
 
-.PHONY: all clean crx xpi run-xpi
+.PHONY: all clean crx xpi run-xpi userscript
 
-all: crx xpi
+all: crx xpi userscript
 
 crx: $(BUILDDIR)/chrome/panicon.crx
 
@@ -47,5 +47,11 @@ $(PKGDIR)/package.json: firefox/package.json
 	mkdir -p $(PKGDIR)
 	cp $< $@
 
+userscript: $(BUILDDIR)/panicon.user.js
+
+$(BUILDDIR)/panicon.user.js: panicon.js userscript/metadata.user.js
+	mkdir -p $(BUILDDIR)
+	cat userscript/metadata.user.js panicon.js > $@
+
 clean:
-	rm -r panicon.crx panicon.xpi $(BUILDDIR)
+	rm -r $(BUILDDIR)
