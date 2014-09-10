@@ -2,7 +2,7 @@ panicon
 =======
 
 JavaScript that adds a pan-icon to a website. Just use the contens of panicon.js as
-a bookmarklet. Browser Add-ons will follow.
+a bookmarklet. Browser Add-ons will follow. ([online demo](http://panzi.github.io/panicon/))
 
 MIT License
 -----------
